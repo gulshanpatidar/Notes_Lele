@@ -8,6 +8,13 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    buildFeatures {
+
+        dataBinding true
+
+        // for view binding:
+        // viewBinding true
+    }
 
     defaultConfig {
         applicationId "com.example.noteslele"
@@ -31,10 +38,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-
-    dataBinding{
-        enabled = true
     }
 
     packagingOptions {

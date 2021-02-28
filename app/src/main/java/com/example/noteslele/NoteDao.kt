@@ -16,6 +16,6 @@ interface NoteDao {
     suspend fun delete(note: Note)
 
     //this query is used to show all the data present in the notes_table and we putted that into the live data list of notes.
-    @Query("SELECT * FROM notes_table")
+    @Query("SELECT * FROM notes_table ORDER BY id ASC")
     fun getNotes(): LiveData<List<Note>>
 }

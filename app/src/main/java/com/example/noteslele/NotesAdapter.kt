@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 //this adapter class is used to set the data to the views
 class NotesAdapter(private val context: Context, private val listener: INotesRVAdapter): RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
-    //allNotes variable is used to store all the notes
+    //allNotes variable is used to store all the notes and it is initialized in the updateNotes method
     private val allNotes = ArrayList<Note>()
 
     //this is an inner class which will act as viewHolder for our adapter and it has two views, one for the text and other one is for delete button imageView
@@ -43,6 +43,16 @@ class NotesAdapter(private val context: Context, private val listener: INotesRVA
     //this simply returns the number of notes in this particular case
     override fun getItemCount(): Int {
         return allNotes.size
+    }
+
+    //method to update the allNotes variable and it is taking list of notes as an argument
+    fun updateNotes(newList: List<Note>) {
+        //clearing the previous data and adding new data
+        allNotes.clear()
+        allNotes.addAll(newList)
+
+        //this method call will notify adapter to call all it's three main methods.
+        notifyDataSetChanged()
     }
 }
 

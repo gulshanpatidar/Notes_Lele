@@ -22,7 +22,7 @@
             android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/submit_button"
@@ -30,22 +30,23 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="@color/design_default_color_primary_dark"
+            android:onClick="submitNote"
             android:text="@string/submit_button_text"
+            android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/noteInput"
-            android:textColor="#ffffff"/>
+            app:layout_constraintTop_toBottomOf="@id/noteInput" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/submit_button"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            tools:listitem="@layout/item_note"/>
+            app:layout_constraintTop_toBottomOf="@id/submit_button"
+            tools:listitem="@layout/item_note" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
